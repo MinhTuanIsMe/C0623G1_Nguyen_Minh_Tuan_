@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi tien</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><label for="SoLuong">Số Lượng</label></th>
+        <td>
+
+        </td>
+        <th>From Currency</th>
+        <td>
+
+        </td>  <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="SoLuong"></td>              <td>
+
+    </td>
+        <td>
+            <select id="From">
+                <option value="VietNam">VietNam</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <select id="To">
+                <option value="VietNam">VietNam</option>
+                <option  value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+
+        </td>
+        <td style="background-color:blue"><button onclick="DoiTien()">Convert</button></td>
+    </tr>
+</table>
+
+<br>
+<p id="ketqua"></p>
+</body>
+</html>
+<script>
+    function DoiTien() {
+        let SoLuong = document.getElementById("SoLuong").value;
+        let Form1 = document.getElementById("From").value;
+        let To = document.getElementById("To").value;
+        let ketqua;
+
+
+        if (Form1 == "USD" && To == "VietNam") {
+            ketqua = "ketqua: " + (SoLuong * 23000) + " Đ";
+        }
+        else if (Form1 == "VietNam"&& To =="USD"){
+            ketqua = "ketqua: "+ (SoLuong / 23000) + " $";
+        }
+        document.getElementById("ketqua").innerHTML = ketqua ;
+    }
+</script>
+</body>
+</html>

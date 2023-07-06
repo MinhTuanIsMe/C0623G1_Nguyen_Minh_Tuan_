@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="so1" placeholder="Nhập số thứ nhất">
+    <br>
+<input type="number" id="so2" placeholder="Nhập số thứ hai">
+    <br>
+<button onmouseout = "Add()">Cộng</button>
+<button onmouseout="Sub()">Trừ</button>
+<button onmouseout="Nhan()">Nhân</button>
+<button onmouseout="Chia()">Chia</button>
+<br>
+<let id="ketqua">Kết quả</let>
+
+<script>
+    function Add() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = Number(a) + Number(b);
+        document.getElementById("ketqua").innerHTML = c;
+    }
+
+    function Sub() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = Number(a) - Number(b);
+        document.getElementById("ketqua").innerHTML = c;
+    }
+    function Nhan() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = Number(a) * Number(b);
+        document.getElementById("ketqua").innerHTML = c;
+    }
+    function Chia() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = Number(a) / Number(b);
+        document.getElementById("ketqua").innerHTML= c;
+    }
+</script>
