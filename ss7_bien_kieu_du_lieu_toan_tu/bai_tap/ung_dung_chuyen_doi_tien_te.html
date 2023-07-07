@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doi tien</title>
+    <title>Hello</title>
 </head>
 <body>
 <table>
     <tr>
-        <th><label for="SoLuong">Số Lượng</label></th>
+        <th><label for="amount">Money</label></th>
         <td>
 
         </td>
@@ -18,11 +18,11 @@
         <th></th>
     </tr>
     <tr>
-        <td><input type="text" id="SoLuong"></td>              <td>
+        <td><input type="text" id="amount"></td>              <td>
 
     </td>
         <td>
-            <select id="From">
+            <select id="from">
                 <option value="VietNam">VietNam</option>
                 <option value="USD">USD</option>
             </select>
@@ -31,7 +31,7 @@
 
         </td>
         <td>
-            <select id="To">
+            <select id="to">
                 <option value="VietNam">VietNam</option>
                 <option  value="USD">USD</option>
             </select>
@@ -39,29 +39,35 @@
         <td>
 
         </td>
-        <td style="background-color:blue"><button onclick="DoiTien()">Convert</button></td>
+        <td style="background-color:blue"><button onclick="Convert()">Convert</button></td>
     </tr>
 </table>
 
 <br>
-<p id="ketqua"></p>
+<p id="result"></p>
 </body>
 </html>
 <script>
-    function DoiTien() {
-        let SoLuong = document.getElementById("SoLuong").value;
-        let Form1 = document.getElementById("From").value;
-        let To = document.getElementById("To").value;
-        let ketqua;
+    function Convert() {
+        let amount = document.getElementById("amount").value;
+        let form1 = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let result;
 
+        if (form1 == "USD" && to == "USD") {
+            result = "Số tiền là : " +amount + " $";
+        }
+        else if (form1 == "VietNam"&& to =="VietNam"){
+            result = "Số tiền là :  "+amount + " Đ";
+        }
 
-        if (Form1 == "USD" && To == "VietNam") {
-            ketqua = "ketqua: " + (SoLuong * 23000) + " Đ";
+        if (form1 == "USD" && to == "VietNam") {
+            result = "Số tiền là :  " + (amount * 23000) + " Đ";
         }
-        else if (Form1 == "VietNam"&& To =="USD"){
-            ketqua = "ketqua: "+ (SoLuong / 23000) + " $";
+        else if (form1 == "VietNam"&& to =="USD"){
+            result = "Số tiền là : "+ (amount / 23000) + " $";
         }
-        document.getElementById("ketqua").innerHTML = ketqua ;
+        document.getElementById("result").innerHTML = result ;
     }
 </script>
 </body>
