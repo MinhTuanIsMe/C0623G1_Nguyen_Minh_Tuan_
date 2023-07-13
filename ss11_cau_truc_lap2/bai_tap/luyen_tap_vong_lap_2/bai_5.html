@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tien = +prompt('Số tiền gửi: ');
+    let thang = +prompt('Gửi bao nhiêu tháng: ');
+    let lai = +prompt('Lãi xuất hàng tháng: ');
+    let i = 0;
+    while (i < thang) {
+        tien = tien * (1 + lai / 100);
+        i++
+    }
+    document.write("Tien lai hang thang la: " + tien);
+</script>
+</body>
+</html>

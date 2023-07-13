@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c;
+    let d = +prompt('Nhập số lượng cần in: ');
+    let e = 0;
+    for (let x = 1; x <= d; x++) {
+        c = a + b;
+        b = a;
+        a = c;
+        e = c;
+        document.write(e + '<br/>');
+    }
+
+</script>
+</body>
+</html>

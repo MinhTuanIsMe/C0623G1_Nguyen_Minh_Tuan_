@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let a = 0;
+    let b = 1;
+    let c;
+    let num = 0;
+    for (let x = 1; x <= 20; x++) {
+        c = a + b;
+        b = a;
+        a = c;
+        document.write(c + '<br/>');
+        num += c;
+
+    }
+    document.write('Tổng 20 số là: ' + num);
+
+</script>
+</body>
+</html>
