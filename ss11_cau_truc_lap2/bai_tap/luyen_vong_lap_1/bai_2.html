@@ -6,14 +6,18 @@
 </head>
 <body>
 <script>
-    let n;
+    let nhietDo
     do {
-        n = +prompt('nhập nhiệt độ');
-        if (n > 100) {
-            document.write('cần giảm nhiệt độ');
+        nhietDo = +prompt("Nhập nhiệt độ");
+        if (nhietDo >= 100) {
+            document.write("Vui lòng giảm nhiệt độ");
+        } else if (nhietDo <= 20){
+            document.write("Vui lòng tăng nhiệt độ");
+        } else {
+            document.write("Nhiệt độ ổn định")
+            break;
         }
-    } while (n < 20);
-    document.write('cần tăng nhiệt độ');
+    } while (true)
 </script>
 </body>
 </html>

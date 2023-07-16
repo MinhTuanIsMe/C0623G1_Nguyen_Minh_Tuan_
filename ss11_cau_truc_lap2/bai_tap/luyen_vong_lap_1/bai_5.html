@@ -7,16 +7,16 @@
 <body>
 <script>
     debugger
-    let a = 0;
-    let b = 1;
-    let c;
+    let number1 = 0;
+    let number2 = 1;
+    let result;
     let num = 0;
     for (let x = 1; x <= 20; x++) {
-        c = a + b;
-        b = a;
-        a = c;
-        document.write(c + '<br/>');
-        num += c;
+        result = number1 + number2;
+        number2 = number1;
+        number1 = result;
+        document.write(result + '<br/>');
+        num += result;
 
     }
     document.write('Tổng 20 số là: ' + num);
