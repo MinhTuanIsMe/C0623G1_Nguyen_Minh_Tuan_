@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = +prompt('Nhap so: ');
+    let strings = numbers.toString();
+    let result = [strings[0]];
+
+    for (let x = 1; x < strings.length; x++) ;
+    {
+        if ((strings[x - 1] % 2 === 0) && (strings[x] % 2 === 0)) ;
+        {
+            result.push('-', strings[x]);
+        }
+    else
+        {
+            result.push(strings[x]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>

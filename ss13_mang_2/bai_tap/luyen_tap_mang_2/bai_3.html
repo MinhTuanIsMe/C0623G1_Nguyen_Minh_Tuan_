@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kyTu = +prompt('Nhập thích thước con của mảng: ')
+    let kichThuoc = +prompt('Nhập kích thước cha của mảng: ')
+    let arr = []
+    for (let i = 0; i < kichThuoc; i++) {
+        arr[i] = []
+        for (let j = 0; j < kyTu; j++) {
+            arr[i][j] = +prompt('Nhập giá trị phần tử')
+            document.write(arr[i][j])
+
+        }
+    }
+</script>
+</body>
+</html>
