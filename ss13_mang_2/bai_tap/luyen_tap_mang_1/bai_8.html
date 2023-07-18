@@ -6,12 +6,12 @@
 </head>
 <body>
 <script>
-    let arr = []
+    let arr = [];
     for (let i = 0; i < 10; i++) {
-        let numbers = +prompt("Nhập phần tử")
-        arr.push(numbers)
+        let numbers = +prompt("Nhập phần tử");
+        arr.push(numbers);
     }
-    document.writeln("Số ban đầu là: " + arr +  "<br>" )
+    document.writeln("Số ban đầu là: " + arr +  "<br>" );
     arr.sort((a, b) => b - a);
     document.write("Số sau khi chuyển là: " +  arr);
 </script>

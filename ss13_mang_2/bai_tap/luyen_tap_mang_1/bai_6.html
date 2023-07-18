@@ -7,22 +7,22 @@
 <body>
 <script>
     debugger
-    let arr = []
+    let arr = [];
     for (let i = 0; i < 10; i++) {
-        let numbers = +prompt("Nhập phần tử")
-        arr.push(numbers)
+        let numbers = +prompt("Nhập phần tử");
+        arr.push(numbers);
     }
-    let numberV = +prompt("Nhập số V cần tìm:")
-    let out = false
+    let numberV = +prompt("Nhập số V cần tìm:");
+    let out = false;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === numberV) {
-            out = true
+            out = true;
         }
     }
     if (out) {
-        document.write("V nằm trong mảng")
+        document.write("V nằm trong mảng");
     } else {
-        document.write("V không nằm trong mảng")
+        document.write("V không nằm trong mảng");
     }
 
 </script>
