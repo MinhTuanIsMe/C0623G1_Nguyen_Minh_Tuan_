@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    displaycharacters();
+
+    function displaycharacters() {
+        let characterArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, "z", "a", "b", "d"];
+        let anyCharacter = prompt("Ki tự.");
+        let count = 0;
+        for (let i = 0; i < characterArray.length; i++) {
+            if (characterArray[i] === anyCharacter) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            document.write(count);
+        } else {
+            document.write(-1);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="num"></label><input type="number" id="num" placeholder="Số cần tính : ">
+<button onclick="factorial()">Tính</button>
+<script>
+    debugger
+
+    function factorial() {
+        let result = 1;
+        let number = +document.getElementById("num").value;
+        for (let i = 1; i <= number; i++) {
+            result *= i;
+        }
+        document.write("Giai thừa của " + number + " là " + result);
+    }
+</script>
+</body>
+</html>

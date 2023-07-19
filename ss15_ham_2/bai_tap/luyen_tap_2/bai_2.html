@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Diện tích hình tròn</p>
+<label for="num"></label><input type="number" id="num" placeholder="bán kính">
+<button onclick="acreage()">Tính</button>
+<br>
+<p>Chu vi hình tròn</p>
+<label for="num1"></label><input type="number" id="num1" placeholder="diện tích">
+<button onclick="perimeter()">Tính</button>
+<script>
+    function acreage() {
+        let R = +document.getElementById("num").value;
+        let Circle = (R * R) * 3.14;
+        alert("Diện tích hình tròn là: " + Circle);
+    }
+
+    function perimeter() {
+        let C = +document.getElementById("num1").value;
+        let diameterOfACircle = (C * C) * 3.14;
+        alert("Chu vi hình tròn là: " + diameterOfACircle);
+    }
+</script>
+</body>
+</html>
