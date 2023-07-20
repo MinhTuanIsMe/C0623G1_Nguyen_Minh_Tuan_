@@ -9,7 +9,7 @@
     displaycharacters();
 
     function displaycharacters() {
-        let characterArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, "z", "a", "b", "d"];
+        let characterArray = ["a", "b", "c", "d", "e", "a", "b", "c", "d", "e"];
         let anyCharacter = prompt("Ki tự.");
         let count = 0;
         for (let i = 0; i < characterArray.length; i++) {
@@ -18,7 +18,7 @@
             }
         }
         if (count > 0) {
-            document.write(count);
+            document.write("Từ: " + anyCharacter + " xuất hiện " + count + " lần");
         } else {
             document.write(-1);
         }

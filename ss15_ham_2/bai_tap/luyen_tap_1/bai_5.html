@@ -11,6 +11,7 @@
     let inputStar = prompt("Nhập tên sao: ");
     let indexStar;
     searchStar();
+
     function isExistStar(inputStart) {
         for (let i = 0; i < star1.length; i++) {
             if (star1[i] === inputStart) {
@@ -20,6 +21,7 @@
         }
         return false;
     }
+
     let isExistStar1 = isExistStar(inputStar);
 
     function searchStar() {

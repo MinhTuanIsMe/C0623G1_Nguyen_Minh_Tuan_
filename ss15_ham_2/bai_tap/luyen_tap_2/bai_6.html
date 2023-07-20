@@ -8,8 +8,6 @@
 <label for="num1"></label><input type="number" id="num1" placeholder="Số thứ ba">
 <button onclick="checkNumber()">Tính</button>
 <script>
-    checkNumber();
-
     function checkNumber() {
         let number = +document.getElementById("num1").value;
         if (number > 0 && number % 1 === 0) {
