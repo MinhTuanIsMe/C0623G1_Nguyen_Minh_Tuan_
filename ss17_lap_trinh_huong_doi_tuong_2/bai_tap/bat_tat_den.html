@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class Electriclamp {
+        constructor(status) {
+            this.status = status
+        }
+
+        turnOn() {
+            this.status = true
+        }
+
+        turnOff() {
+            this.status = false
+        }
+    }
+
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status
+            this.lamp = lamp
+        }
+        switchOn() {
+            if (this.lamp !== null) {
+                this.status = true
+                this.lamp.turnOn()
+            } else {
+                console.log("Chưa có bóng đèn")
+            }
+        }
+
+        switchOff() {
+            this.status = false
+            this.lamp.turnOff()
+        }
+    }
+
+    let lamp1 = new Electriclamp(false)
+    let lamp2 = new Electriclamp(true)
+    let button = new SwitchButton(false,null)
+    console.log("status Lamp", lamp1.status)
+    console.log("status Lamp", lamp2.status)
+    console.log("status button: ", button.status)
+    button.switchOn()
+    console.log("status Lamp: ", lamp1.status)
+    console.log("status button: ", button.status)
+</script>
+</html>
