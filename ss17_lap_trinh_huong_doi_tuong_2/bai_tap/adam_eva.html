@@ -1,82 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
 </head>
-
 <body>
 <script>
     class Apple {
-        constructor(number) {
-            this.number = 7;
+        constructor() {
         }
 
-        getNumber() {
-            return this.number;
-        }
-
-        setNumber(number) {
-            this.number = number;
-        }
-    }
-
-    class Human {
-        constructor(name, gender, weight, say) {
-            this.name = name;
-            this.gender = gender;
-            this.weight = weight;
-            this.say = say;
-        }
-        getName() {
-            return this.name;
+        setWeight(newWeight) {
+            this.weight = newWeight;
         }
 
         getWeight() {
             return this.weight;
         }
 
-        setWeight(weight) {
-            this.weight = weight;
-        }
-
-        getGender() {
-            if (this.gender) {
-                return "Nam";
+        isEmpty() {
+            if (this.weight <= 0) {
+                console.log("Đã hết");
+                return true;
             } else {
-                return "Nữ";
+                return false;
             }
         }
 
-        getInfo() {
-            return "Tên: " + this.name + "</br>Giới tính: " + this.getGender() + "</br>Nói: " + this.say + "</br>Cân nặng: " + this.weight + " kg</br>";
+        decreaseApple() {
+            if (this.isEmpty()) {
+                document.write("Hết táo");
+            } else {
+                this.weight--;
+            }
         }
     }
 
-    let myApple = new Apple();
-    let adam = new Human("Adam", true, 51, "Hihi");
-    let eva = new Human("Eva", false, 49, "Hehe");
+    class Human {
+        constructor() {
+        }
 
-    document.write(adam.getInfo() + "</br>");
-    document.write(eva.getInfo() + "</br>");
+        setName(newName) {
+            this.name = newName;
+        }
 
-    let count = 1;
-    while (myApple.getNumber() > 0) {
-        let people = [eva, adam];
-        let actionHuman = people[count % 2];
+        getName() {
+            return this.name;
+        }
 
-        myApple.setNumber(myApple.getNumber() - 1);
-        actionHuman.setWeight(actionHuman.getWeight() + 1);
+        setWeight(newWeight) {
+            this.weight = newWeight;
+        }
 
-        document.write("Bắt đầu" + count + ": " + actionHuman.getName() + " ăn táo<br>");
-        document.write("- Nói : Táo ngon</br>")
-        document.write("- Trọng lượng táo còn lại: " + myApple.getNumber() + "kg<br>");
-        document.write("- Trọng lượng cơ thể " + actionHuman.getName() + ": " + actionHuman.getWeight() + "kg<br>");
-        document.write("<br>");
-        count++;
+        getWeight() {
+            return this.weight;
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        eat(apple) {
+            if (apple.weight > 0) {
+                this.weight++;
+                apple.decreaseApple();
+            } else {
+                alert("Táo đã hết")
+            }
+        }
+
+        say(string) {
+            console.log(string);
+        }
+
+        setGender(newGender) {
+            this.gender = newGender;
+        }
+
+        isMale() {
+            if (this.gender === "Male") {
+                this.gender = "Male";
+                return true;
+            } else {
+                this.gender = "Female";
+                return false;
+            }
+        }
     }
+
+    let apple1 = new Apple();
+    let adam = new Human();
+    let eva = new Human();
+
+    apple1.setWeight(10);
+    console.log(apple1.getWeight(), "đv");
+
+
+    adam.setName("Adam");
+    adam.setGender("Male");
+    adam.setWeight(60);
+    document.write(adam.getName() + ", " + adam.gender + ", " + adam.getWeight() + "kg" + "<br/>");
+    console.log(adam.isMale());
+
+
+    eva.setName("Eva");
+    eva.setGender("Female");
+    eva.setWeight(40);
+    document.write(eva.getName() + ", " + eva.gender + ", " + eva.getWeight() + "kg" + "<br/>");
+    console.log(eva.isMale());
+    document.write("</br>");
+
+    while(apple1.isEmpty()!== true) {
+        adam.say("Adam mời Eva ăn táo");
+        eva.checkApple(apple1);
+        eva.eat(apple1);
+        document.write("Eva sau khi ăn táo: " + eva.getWeight() + "kg" + ", " + "quả táo còn: " + apple1.getWeight() + "đv" + "<br/>"+"<br/>");
+        eva.say("Eva mời Adam ăn táo");
+        adam.checkApple(apple1);
+        adam.eat(apple1);
+        document.write("Adam sau khi ăn táo: " + adam.getWeight() + "kg" + ", " + "quả táo còn: " + apple1.getWeight() + "đv" + "<br/>"+"<br/>");
+    }
+
+
 </script>
+
 </body>
 </html>
