@@ -6,76 +6,75 @@
 </head>
 <body>
 <script>
-    class Mobile {
-        constructor(name, baterry, draft, inbox, outbox, status,) {
-            this.name = name
-            this.baterry = baterry
-            this.draft = draft
-            this.inbox = inbox
-            this.outbox = outbox
-            this.status = status
+    class Phone {
+        constructor(name, battery, draft, inbox, outbox, status) {
+            this.name = name;
+            this.battery = battery;
+            this.draft = draft;
+            this.inbox = inbox;
+            this.outbox = outbox;
+            this.status = status;
         }
 
         checkStatus() {
             if (this.status) {
-                console.log(this.name, " Điện thoại đang bật")
+                document.write(this.name, "Điện thoại đang On.");
             } else {
-                console.log(this.name, " Điện thoại đang tắt")
+                document.write("Điên thoại đang Off.");
             }
-            this.baterry--
+            this.battery--;
         }
 
         turnOn() {
             if (this.status) {
-                console.log(" Điện thoại đang bật")
+                document.write("Điện thoại đang On.");
             } else {
-                this.status = true
-                this.baterry--
+                this.status = false;
+                this.battery--;
             }
         }
 
-        turnOff() {
-            if (this.status) {
-                console.log(" Điện thoại đang tắt")
-            } else {
-                this.status = false
-                this.baterry--
-            }
+        setBattery(newBattery) {
+            this.battery = newBattery;
         }
+
         setMessageDraft(message) {
             if (this.status) {
-                this.draft.unshift(message)
-                this.baterry--
+                this.draft.unshift(message);
+                this.battery--;
             } else {
-                console.log(" Cần bật điện thoại để nhắn")
+                document.write(this.name, "Điện thoại đang tắt cần bật.");
             }
         }
 
         sendMessage(message, otherMobile) {
             if (this.status) {
-                this.outbox.unshift(message)
-                otherMobile.inbox.unshift(message)
-                this.baterry--
+                this.outbox.unshift(message);
+                otherMobile.inbox.unshift(message);
+                this.battery--;
             } else {
-                console.log(this.name, " Điện thoại đang tắt")
+                document.write(this.name, "Điện thoại đang tắt.");
             }
-        }
-
-        chargeMobile() {
-            this.baterry++
         }
     }
 
-    let nokia = new Mobile("Nokia", 100, [], [], [], true)
-    let iphone = new Mobile("Iphone", 100, [], [], [], false)
-    nokia.turnOff()
-    nokia.turnOn()
-    nokia.checkStatus()
-    iphone.checkStatus()
-    nokia.chargeMobile()
-    iphone.chargeMobile()
-    console.log(" Số pin iphone ", iphone.baterry)
-    console.log(" Số pin nokia ", nokia.baterry)
+    let nokia = new Phone("Nokia", 50, [], [], [], false);
+    let iphone = new Phone("Iphone", 50, [], [], [], false);
+
+    nokia.checkStatus();
+    iphone.checkStatus();
+
+    nokia.turnOn();
+    nokia.sendMessage("Hihi.", iphone);
+    nokia.sendMessage("Alo", iphone);
+
+    console.log(iphone.inbox);
+    console.log("pin nokia", nokia.battery);
+
+    iphone.turnOn();
+    iphone.sendMessage("Hello");
+    console.log(nokia.inbox);
+
 </script>
 </body>
 </html>

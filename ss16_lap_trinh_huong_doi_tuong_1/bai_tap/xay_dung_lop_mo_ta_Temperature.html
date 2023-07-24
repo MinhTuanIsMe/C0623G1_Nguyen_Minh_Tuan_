@@ -6,21 +6,26 @@
 </head>
 <body>
 <script>
-  class Temperature{
-    constructor(celsius) {
-      this.celsius = celsius;
-    }fahrenheit(){
-      return this.celsius * 1.8 +32
-    }kenvin(){
-      return this.celsius + 273.15
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+
+        fahrenheit() {
+            return this.celsius * 1.8 + 32
+        }
+
+        kenvin() {
+            return this.celsius + 273.15
+        }
     }
-  }
-  let temperature1 = new Temperature(25)
-  let fahrenheit1 = temperature1.fahrenheit()
-  let kenvin1 = temperature1.kenvin()
-  document.write("Độ C là: "+ temperature1.celsius + "<br>")
-  document.write("Độ F là :" + fahrenheit1 + "<br>")
-  document.write("Độ K là :" + kenvin1)
+
+    let temperature1 = new Temperature()
+    let fahrenheit1 = temperature1.fahrenheit()
+    let kenvin1 = temperature1.kenvin()
+    document.write("Độ C là: " + temperature1.celsius + "<br>")
+    document.write("Độ F là :" + fahrenheit1 + "<br>")
+    document.write("Độ K là :" + kenvin1)
 </script>
 </body>
 </html>
