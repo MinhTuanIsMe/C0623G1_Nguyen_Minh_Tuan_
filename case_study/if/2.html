@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let word = prompt("Nhập chữ")
+switch (word){
+    case 'o':
+    case 'u':
+    case 'i':
+    case 'a':
+    case 'e':
+    case 'O':
+    case 'U':
+    case 'I':
+    case 'A':
+    case 'E':
+        document.write(word+"Là kí tự nguyên âm");
+        break;
+    default:
+        document.write(word+"Là kí tự phụ âm");
+        if(isNaN(word) !== 0){
+            alert("Không phải là kí tự");
+        }
+}
+</script>
+</body>
+</html>

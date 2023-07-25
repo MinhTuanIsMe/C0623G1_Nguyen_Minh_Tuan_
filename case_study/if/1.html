@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let wage = +prompt("Nhập lương của bạn: ");
+    let tax;
+    let result;
+    if (wage >= 15000000) {
+        tax = wage / 100 * 20;
+        result = wage - tax;
+        document.write("Lương của bạn là: "+ wage + " Tiền thuế của bạn là: " + tax + " Số tiền còn lại sau khi đóng thuế là: " + result);
+    }else if(wage > 7000000 ){
+        tax = wage / 100 * 10;
+        result = wage - tax;
+        document.write("Lương của bạn là: "+ wage + " Tiền thuế của bạn là: " + tax + " Số tiền còn lại sau khi đóng thuế là: " + result);
+    }else{
+        tax = wage / 100 * 5;
+        result = wage - tax;
+        document.write("Lương của bạn là: "+ wage + " Tiền thuế của bạn là: " + tax + " Số tiền còn lại sau khi đóng thuế là: " + result);
+    }
+</script>
+</body>
+</html>
