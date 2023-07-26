@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        alert("Hôm nay chúng tôi có !\n" +
+            "\n" +
+            "1. Cafe - 15000đ\n" +
+            "2. Cam vắt - 15000đ\n" +
+            "3. Nước ép cà rốt - 20000đ\n" +
+            "4. Nước ép cà chua - 20000đ\n" +
+            "5. Nước lọc - 5000đ\n" +
+            "6. Nước dừa - 30000đ\n" +
+            "7. Hủy order\n");
+        let menu = +prompt("Vui lòng chọn món");
+        switch (menu) {
+            case 1:
+                if (menu === 1) {
+                    let total = +prompt("Bạn đã chọn Cafe vui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn Cafe với số lượng là: " + total + " Với giá " + total * 15000);
+                }
+                break;
+            case 2:
+                if (menu === 2) {
+                    let total = +prompt("Bạn đã chọn cam vắt ui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn cam vắt với số lượng là: " + total + " Với giá " + total * 15000);
+                }
+                break;
+            case 3:
+                if (menu === 3) {
+                    let total = +prompt("Bạn đã chọn nước ép cà rốt vui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn nước ép cà rốt với số lượng là: " + total + "Với giá " + total * 20000);
+                }
+                break;
+            case 4:
+                if (menu === 4) {
+                    let total = +prompt("Bạn đã chọn nước ép cà chua vui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn nước ép cà chua với số lượng là: " + total + " Với giá " + total * 20000);
+                }
+                break;
+            case 5:
+                if (menu === 5) {
+                    let total = +prompt("Bạn đã chọn nước lọc vui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn nước lọc với số lượng là: " + total + " Với giá " + total * 5000);
+                }
+                break;
+            case 6:
+                if (menu === 6) {
+                    let total = +prompt("Bạn đã chọn nước dừa vui lòng nhập số lượng: ")
+                    alert("Bạn đã chọn nước dừa với số lượng là: " + total + " Với giá " + total * 30000);
+                }
+                break;
+            case 7:
+                break;
+            default:
+                alert("Món bạn chọn không có trong menu");
+        }
+    }
+    while (order !== 7);
+</script>
+</body>
+</html>
