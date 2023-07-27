@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập n");
+    let m = +prompt("Nhập m");
+    let array = [];
+    let sum = 0;
+        for (let i = 0; i < n; i++) {
+            array[i] = [];
+            for (let j = 0; j < m; j++) {
+                array[i][j] = +prompt("Nhập phần tử");
+            }
+        }
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < m; j++) {
+                if (array[i][j] % 2 === 0) {
+                    sum += array[i][j];
+                }
+            }
+        }
+        document.write("Số n bạn đã nhập là: " + n)
+        document.write("<br>Số m bạn đã nhập là: " + m)
+        document.write("<br> Các số bạn đã nhập là: " + array + "<br>")
+        document.write("Tổng các số chẵn là: " + sum);
+</script>
+</body>
+</html>
