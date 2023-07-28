@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = [
+        [1, 2, 3, 0],
+        [4, 5, 6, 7],
+    ];
+    let max = n[0][0];
+    let min = n[0][0];
+    for (let i = 0; i < n.length; i++) {
+        for (let j = 0; j < n[i].length; j++) {
+            if (max < n[i][j]) {
+                max = n[i][j];
+            } else if (min > n[i][j]) {
+                min = n[i][j];
+            }
+        }
+    }
+    console.log(max);
+    console.log(min);
+</script>
+</body>
+</html>

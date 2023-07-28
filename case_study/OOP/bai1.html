@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addNewStudent()">Thêm mới học viên</button>
+<button onclick="editInfo()">Sửa thông tin học viên</button>
+<button onclick="deleteInfo()">Xóa thông tin học viên</button>
+<div id="studentTable"></div>
+<script>
+    class student {
+        constructor(id, name, className, email, birthDay, module) {
+            this.id = id;
+            this.name = name;
+            this.className = className;
+            this.email = email;
+            this.birthDay = birthDay;
+            this.module = module;
+        }
+    }
+
+    let student1 = new student(1, "Minh Tuan", "CO623G1", "minhtuan@gmail.com", "31/07/2005", 1);
+    let student2 = new student(2, "Minh Tuan", "CO623G1", "minhtuan@gmail.com", "31/07/2005", 2);
+    let student3 = new student(3, "Minh Tuan", "CO623G1", "minhtuan@gmail.com", "31/07/2005", 3);
+    let studentList = [student1, student2, student3];
+
+    function setStudentTable(array) {
+        let table = "<table border=\"1px\" cellpadding=\"20px\" cellspacing=\"0px\">" +
+            "<tr>" +
+            "<th>Mã học viên</th>" +
+            "<th>Tên</th>" +
+            "<th>Tên lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày sinh</th>" +
+            "<th>Module</th>" +
+            "<th>Mã học viên</th>" +
+
+            "</tr>"
+        for (let i = 0; i < array.length; i++) {
+            table +=
+                "<tr>" +
+                "<td>" + array[i].id + "</td>" +
+                "<td>" + array[i].name + "</td>" +
+                "<td>" + array[i].className + "</td>" +
+                "<td>" + array[i].email + "</td>" +
+                "<td>" + array[i].birthDay + "</td>" +
+                "<td>" + array[i].module + "</td>" +
+
+                "</tr>"
+        }
+        table += "</table>";
+        document.getElementById("studentTable").innerHTML = table;
+    }
+
+    setStudentTable(studentList)
+
+    function addNewStudent() {
+        let newId = prompt("Nhập ID");
+        let newName = prompt("Nhập name");
+        let newClassName = prompt("Nhập tên lớp");
+        let newEmail = prompt("Nhập email");
+        let newBirthday = prompt("Nhập ngày sinh");
+        let newModule = prompt("Nhập module");
+        let newStudent = new student(newId, newName, newClassName, newEmail, newBirthday, newModule);
+        studentList.push(newStudent);
+        setStudentTable(studentList);
+    }
+
+    function editInfo() {
+        let idInfo = +prompt("Nhập ID cần sửa");
+        let flag = true;
+        for (let i = 0; i < studentList.length; i++) {
+            if (idInfo === studentList[i].id) {
+                flag = false;
+                studentList[i].id = prompt("Nhập lại id");
+                studentList[i].name = prompt("Nhập lại tên");
+                studentList[i].className = prompt("Nhập lại lớp");
+                studentList[i].email = prompt("Nhập lại email");
+                studentList[i].birthDay = prompt("Nhập lại ngày sinh");
+                studentList[i].module = prompt("Nhập lại module");
+            }
+        }
+        if (flag) {
+            alert("Mã học viên không tồn tại");
+        }
+        setStudentTable(studentList)
+    }
+
+    function deleteInfo() {
+        let deleteId = +prompt("Điền ID cần xóa")
+        let flag = true
+        for (let i = 0; i < studentList.length; i++) {
+            if (deleteId === studentList[i].id) {
+                flag = false
+                let yesno = confirm("Bạn có muốn xóa ID này ? ")
+                if (yesno === true) {
+                    studentList.splice(i, 1)
+                    break
+                } else {
+                    alert("Bạn không xóa")
+                }
+            }
+        }
+        if (flag) {
+            alert("ID không tồn tại")
+        }
+        setStudentTable(studentList)
+    }
+</script>
+</body>
+</html>
